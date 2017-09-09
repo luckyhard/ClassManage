@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+  <constant name="struts.devMode" value="true" />
+  <constant name="struts.i18n.encoding" value="utf-8" />
+	<package name="default" namespace="/" extends="struts-default,json-default">
+	<action name="loginAction" class="com.jpg.classmanage.action.LoginAction" method="login">
+		<result name="success">main.jsp</result>
+		<result name="teacher">main.jsp</result>
+		<result name="student">main.jsp</result>
+		<result name="fail">index.jsp</result>
+	</action>
+	<action name="classesAction" class="com.jpg.classmanage.action.ClassesAction" method="list">
+	     <result type="json">
+           <param name="root">resultObj</param> 
+         </result>
+	</action>
+	<action name="addClassesAction" class="com.jpg.classmanage.action.ClassesAction" method="addClasses">
+		<!-- <result name="success" type="chain">classesAction</result> -->
+		  <result type="json">
+            <param name="root">result</param>
+          </result>  
+	</action>
+	  
+	 <action name="deleteClassesAction" class="com.jpg.classmanage.action.ClassesAction" method="delete">
+		<result type="json">
+            <param name="root">result</param> 
+       </result>
+	 </action>
+	<action name="listClassesName" class="com.jpg.classmanage.action.ClassesAction" method="comBoList">
+		<result type="json">
+          <param name="root">jsonArray</param> 
+        </result>
+	</action>
+	<action name="classesByTeacherAction" class="com.jpg.classmanage.action.ClassesAction" method="comBoListByTeacher">
+		<result type="json">
+          <param name="root">jsonArray</param> 
+        </result>
+	</action>
+	<action name="courseAction" class="com.jpg.classmanage.action.CourseAction" method="list">
+		<result type="json">
+            <param name="root">resultObj</param> 
+        </result>
+	</action>
+	<action name="addCourseAction" class="com.jpg.classmanage.action.CourseAction" method="addCourse">
+		   <result type="json">
+              <param name="root">result</param>
+           </result>  
+	   </action>
+	 <action name="deleteCourseAction" class="com.jpg.classmanage.action.CourseAction" method="delete">
+		<result type="json">
+            <param name="root">result</param> 
+        </result>
+	</action>
+	<action name="listCourseName" class="com.jpg.classmanage.action.CourseAction" method="comBoList">
+		<result type="json">
+            <param name="root">jsonArray</param> 
+        </result>
+	</action>
+	<action name="courseByTeacherAction" class="com.jpg.classmanage.action.CourseAction" method="comBoListByTeacher">
+		<result type="json">
+            <param name="root">jsonArray</param> 
+        </result>
+	</action>
+	
+	<action name="studentAction" class="com.jpg.classmanage.action.StudentAction" method="list">
+		<result type="json">
+            <param name="root">resultObj</param> 
+        </result>
+	</action>
+	<action name="addStudentAction" class="com.jpg.classmanage.action.StudentAction" method="addStudent">
+		 <result type="json">
+            <param name="root">result</param>
+         </result>  
+	</action>
+	   
+	<action name="deleteStudentAction" class="com.jpg.classmanage.action.StudentAction" method="delete">
+		<result type="json">
+          <param name="root">result</param> 
+        </result>
+	</action>
+	
+	<action name="listStudentId" class="com.jpg.classmanage.action.StudentAction" method="comBoList">
+	  <result type="json">
+         <param name="root">jsonArray</param> 
+      </result>
+       </action>
+      
+
+		<action name="gradeAction" class="com.jpg.classmanage.action.GradeAction" method="list">
+		<result type="json">
+           <param name="root">resultObj</param> 
+        </result>
+	</action>
+	<action name="listGradeName" class="com.jpg.classmanage.action.GradeAction" method="comBoList">
+		<result type="json">
+           <param name="root">jsonArray</param> 
+        </result>
+	</action>
+	<action name="addGradeAction" class="com.jpg.classmanage.action.GradeAction" method="addGrade">
+		 <result type="json">
+            <param name="root">result</param>
+         </result>  
+	   </action>
+	
+	  <action name="deleteGradeAction" class="com.jpg.classmanage.action.GradeAction" method="delete">
+		<result type="json">
+           <param name="root">result</param> 
+        </result>
+	</action>
+	
+	  <action name="addTeacherAction" class="com.jpg.classmanage.action.TeacherAction" method="addTeacher">
+		  <result type="json">
+             <param name="root">result</param>
+          </result>  
+	  </action>
+	  <action name="updateTeacherAction" class="com.jpg.classmanage.action.TeacherAction" method="updateTeacher">
+		  <result type="json">
+             <param name="root">result</param>
+          </result>  
+	  </action>
+	    <action name="teacherAction" class="com.jpg.classmanage.action.TeacherAction" method="list">
+		<result type="json">
+           <param name="root">resultObj</param> 
+        </result>
+	</action>
+	<action name="deleteTeacherAction" class="com.jpg.classmanage.action.TeacherAction" method="deleteTeacher">
+		<result type="json">
+          <param name="root">result</param> 
+        </result>
+	</action>
+	<action name="examAction" class="com.jpg.classmanage.action.ExamAction" method="list">
+		<result type="json">
+           <param name="root">resultObj</param> 
+        </result>
+	</action>
+	<action name="examByTeacherAction" class="com.jpg.classmanage.action.ExamAction" method="listByTeacher">
+		<result type="json">
+           <param name="root">resultObj</param> 
+        </result>
+	</action>
+	<action name="examByStudentAction" class="com.jpg.classmanage.action.ExamAction" method="listByStudent">
+		<result type="json">
+           <param name="root">resultObj</param> 
+        </result>
+	</action>
+	<action name="addExamAction" class="com.jpg.classmanage.action.ExamAction" method="addExam">
+		  <result type="json">
+             <param name="root">result</param>
+          </result>  
+	  </action>
+	
+	 <action name="escoreListAction" class="com.jpg.classmanage.action.EscoreAction" method="getEscoreList">
+		<result type="json">
+           <param name="root">resultObj</param> 
+        </result>
+	</action>
+	 <action name="escoreListActionByStudent" class="com.jpg.classmanage.action.EscoreAction" method="getEscoreListByStudent">
+		<result type="json">
+           <param name="root">resultObj</param> 
+        </result>
+	</action>
+	<action name="registerScoreAction" class="com.jpg.classmanage.action.EscoreAction" method="registerScore">
+		<result type="json">
+           <param name="root">result</param> 
+        </result>
+	</action>
+	
+	 <action name="courseListAction" class="com.jpg.classmanage.action.EscoreAction" method="CourseList">
+		<result type="json">
+           <param name="root">result</param> 
+        </result>
+	</action>
+	<action name="loadCourseByTeacherAction" class="com.jpg.classmanage.action.TeacherAction" method="loadCourseByTeacher">
+		<result type="json">
+           <param name="root">result</param> 
+        </result>
+	</action>
+	
+	    <action name="teacherPersonListAction"  class="com.jpg.classmanage.action.TeacherAction" method="teacherPersonList">
+            <result name="success">/teacherPersonal.jsp</result>
+        </action>
+        <action name="updateTeacherPersonAction"  class="com.jpg.classmanage.action.TeacherAction" method="updateTeacherPersonal">
+           <result type="json">
+           <param name="root">result</param> 
+        </result>
+        </action>
+         <action name="updateTeacherPasswordAction"  class="com.jpg.classmanage.action.TeacherAction" method="updateTeacherPassword">
+           <result type="json">
+           <param name="root">result</param> 
+        </result>
+        </action>
+	    
+	     <action name="studentPersonListAction"  class="com.jpg.classmanage.action.StudentAction" method="studentPersonList">
+            <result name="success">/studentPersonal.jsp</result>
+        </action>
+         <action name="updateStudentPersonAction"  class="com.jpg.classmanage.action.StudentAction" method="updateStudentPersonal">
+           <result type="json">
+           <param name="root">result</param> 
+        </result>
+        </action>
+        <action name="studentAllAction" class="com.jpg.classmanage.action.StudentAction" method=" listByClass">
+		<result type="json">
+            <param name="root">resultObj</param> 
+        </result>
+	</action>
+       
+         <action name="updateStudentPasswordAction"  class="com.jpg.classmanage.action.StudentAction" method="updateStudentPassword">
+           <result type="json">
+           <param name="root">result</param> 
+        </result>
+        </action>
+	</package>	
+</struts>    
